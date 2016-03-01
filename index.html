@@ -95,8 +95,25 @@
 						<h1><span id="head">Creation</span> of the Blog</h1>
 						<hr>
 					</section>
+
 					<section>
-						Rails command for creating app
+						<p>Open the Command Prompt (PC) or Terminal (MAC)</p>
+						<code class="fragment">rails</code>
+					</section>
+
+					<section>
+						<img src="images/newblog.gif">
+						<code>rails new wwc_blog</code>
+					</section>
+
+					<section>
+						<code class="fragment">cd wwc_blog</code><br>
+						<code class="fragment"> rails server</code>
+						<p class="fragment">Open your browser</p>
+						<code class="fragment">localhost:3000</code>
+					</section>
+
+					<section data-background="images/railshp.png">
 					</section>
 				</section>
 
@@ -105,9 +122,72 @@
 						<h1>The Typical Rails <span id="head">File Structure</span></h1>
 						<hr>
 					</section>
+
 					<section>
-						Go through the break down of the entire file structure
+						<ul>
+							<li class="fragment"><code><b>app/</b></code> - contains your <i><b>assets, helpers, mailers, controllers, model</b></i> and <i><b>views</b></i> files.
+								This is where you will spend close to 75% of your time coding.
+							</li><br>
+							<li class="fragment "><code><b>bin/</b></code> - contains your basic ruby scripts.  This includes the commands that we run in the terminal such as <b><i>bundle, rake</i></b>
+								and <b><i>rails</i></b>.
+							</li>
+						</ul>
 					</section>
+
+					<section>
+						<ul>
+							<li><code><b>config/</b></code> - contains the major configurations needed for the app. This includes the three environments:
+								<ul>
+									<li><i><b>development.rb</b></i></li>
+									<li><i><b>production.rb</b></i></li>
+									<li><i><b>test.rb</b></i></li>
+									<li><i><b>application.rb</b></i></li>
+								</ul> <b><i>routes.rb</b></i> for creating routes and <b><i>database.yml</b></i> for database configuration.
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<ul>
+							<li><code><b>db/</b></code> - contains the <b><i>seeds.rb</i></b> file which is use to create the application default data. When you begin to make and add new changes
+								changes to the database a <b><i>migrate</i></b> folder is created along with the <b><i>schema.rb</i></b>, which shows the current state of the app's database.
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<ul>
+							<li class="fragment"><code><b>lib/</b></code> - contains reuseable library code that you write.
+								Typically left empty except for the <b><i>assets</i></b> and <b><i>tasks</i></b> folder.
+							</li><br>
+
+							<li class="fragment"><code><b>log/</b></code> - contains the data that on the app when it is being run in the development, production or test environment.
+							</li><br>
+
+							<li class="fragment"><code><b>public/</b></code> - contains the files that are sent to the user as if the files were in the root directory. Case example would be error messages
+								like <b><i>404.html</i></b> or <b><i>500.html</i></b>. This also contains <b><i>favicon.ico</i></b> and <b><i>robots.txt</i></b> files.
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<ul>
+							<li class="fragment"><code><b>test/</b></code> - contains all of the subdirectories with automated tests for each part of your application.
+							</li><br>
+
+							<li class="fragment"><code><b>tmp/</b></code> - contains <b><i>ephemeral files</b></i>.  This is where you finde cached copies of your app's
+								assets, process ids, user sessions and files representing sockets being used in the app.
+							</li><br>
+
+							<li class="fragment"><code><b>vendor/</b></code> - contains assets that are needed by third-party gems whenever you add gems to your application.
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="images/fs.gif"/>
+					</section>
+
 				</section>
 
 
@@ -118,7 +198,13 @@
 						<hr>
 					</section>
 					<section>
-						Chapter 3
+						<p>Open Command Prompt (PC) or Terminal (Mac)</p>
+						<code class="fragment">rails generate scaffold Post title:string body:text</code>
+						<code class="fragment">rake db:migrate</code>
+					</section>
+
+					<section>
+						screenshot of the migration, database, controller, model, vies and gif of actual page
 					</section>
 				</section>
 
