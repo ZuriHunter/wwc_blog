@@ -124,7 +124,7 @@
 					</section>
 
 					<section>
-						<ul>
+						<ul style="list-style-type:none;">
 							<li class="fragment"><code><b>app/</b></code> - contains your <i><b>assets, helpers, mailers, controllers, model</b></i> and <i><b>views</b></i> files.
 								This is where you will spend close to 75% of your time coding.
 							</li><br>
@@ -135,7 +135,7 @@
 					</section>
 
 					<section>
-						<ul>
+						<ul style="list-style-type:none;">
 							<li><code><b>config/</b></code> - contains the major configurations needed for the app. This includes the three environments:
 								<ul>
 									<li><i><b>development.rb</b></i></li>
@@ -148,7 +148,7 @@
 					</section>
 
 					<section>
-						<ul>
+						<ul style="list-style-type:none;">
 							<li><code><b>db/</b></code> - contains the <b><i>seeds.rb</i></b> file which is use to create the application default data. When you begin to make and add new changes
 								changes to the database a <b><i>migrate</i></b> folder is created along with the <b><i>schema.rb</i></b>, which shows the current state of the app's database.
 							</li>
@@ -156,7 +156,7 @@
 					</section>
 
 					<section>
-						<ul>
+						<ul style="list-style-type:none;">
 							<li class="fragment"><code><b>lib/</b></code> - contains reuseable library code that you write.
 								Typically left empty except for the <b><i>assets</i></b> and <b><i>tasks</i></b> folder.
 							</li><br>
@@ -171,7 +171,7 @@
 					</section>
 
 					<section>
-						<ul>
+						<ul style="list-style-type:none;">
 							<li class="fragment"><code><b>test/</b></code> - contains all of the subdirectories with automated tests for each part of your application.
 							</li><br>
 
@@ -199,13 +199,99 @@
 					</section>
 					<section>
 						<p>Open Command Prompt (PC) or Terminal (Mac)</p>
-						<code class="fragment">rails generate scaffold Post title:string body:text</code>
-						<code class="fragment">rake db:migrate</code>
+						<ul style="list-style-type:none;">
+							<li><code class="fragment">rails generate scaffold Post title:string body:text</code></li><br>
+							<li><code class="fragment">rake db:migrate</code></li>
+						</ul>
 					</section>
 
 					<section>
 						screenshot of the migration, database, controller, model, vies and gif of actual page
 					</section>
+
+					<section>
+						migration SS database SS
+					</section>
+
+					<section>
+						controller SS
+					</section>
+
+					<section>
+						model ss view ss
+					</section>
+
+					<section data-background="images/posts.gif">
+					</section>
+
+					<section>
+						<h3>To add an addition field to your table </h3>
+						<p class="fragment"><b>add_ColumnName_to_TableName</b></p><br>
+						<code class="fragment">rails generate migration add_author_to_posts author:string </code>
+					</section>
+
+					<section>
+						screenshot of how that migration table would look like.
+					</section>
+
+					<section>
+						<ul style="list-style-type:none;">
+							<li class="none fragment"><code class="fragment">rails g model Comment author:string body:text post:references</code></li><br>
+							<li class="none fragment"><code class="fragment">rake db:migrate</code></li>
+						</ul>
+					</section>
+
+					<section>
+						<div class="right">
+							<h3>Post</h3>
+							<hr>
+							<table>
+								<tr>
+									<th>id</th>
+									<th>title</th>
+									<th>body</th>
+									<th>author</th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>First Blog</td>
+									<td>Hello World!</td>
+									<td>Zuri</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Second Blog</td>
+									<td>Hello Web!</td>
+									<td>Mary Katherine </td>
+								</tr>
+							</table>
+						</div>
+						<div class="left">
+							<h3>Comment</h3>
+							<hr>
+							<table>
+								<tr>
+									<th>id</th>
+									<th>author</th>
+									<th>body</th>
+									<th>post</th>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Mary Katherine</td>
+									<td>Sweet!</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Zuri</td>
+									<td>Nice!</td>
+									<td>2</td>
+								</tr>
+							</table>
+						</div>
+					</section>
+
 				</section>
 
 				<section>
