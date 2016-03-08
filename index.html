@@ -72,7 +72,7 @@
 						<li>What Are We Making?</li>
 						<li>Creation of the Blog</li>
 						<li>The Typical Rails File Structure</li>
-						<li>Building the Model </li>
+						<li>Building the Models </li>
 						<li>Constructing the Controller</li>
 						<li>Designing the View </li>
 						<li>Feedback</li>
@@ -194,51 +194,80 @@
 
 				<section>
 					<section data-background="#5FD8D5">
-						<h1>Building the <span id="head">Model</span></h1>
+						<h1>Building the <span id="head">Models</span></h1>
 						<hr>
 					</section>
+
 					<section>
-						<p>Open Command Prompt (PC) or Terminal (Mac)</p>
-						<ul style="list-style-type:none;">
-							<li><code class="fragment">rails generate scaffold Post title:string body:text</code></li><br>
-							<li><code class="fragment">rake db:migrate</code></li>
-						</ul>
+						<p style="text-align:center;">Open Command Prompt (PC) or Terminal (Mac)</p>
+						<code class="fragment" >rails generate scaffold Post title:string body:text</code><br><br>
+						<code class="fragment">rake db:migrate</code>
+
+						<!-- <ul style="list-style-type:none;">
+							<li style="text-align:center;"><code class="fragment" >rails generate scaffold Post title:string body:text</code></li><br><br>
+							<li style="text-align:center;"><code class="fragment">rake db:migrate</code></li>
+						</ul> -->
 					</section>
 
 					<section>
-						screenshot of the migration, database, controller, model, vies and gif of actual page
+							<h3>Post Migration</h3>
+							<img style="height:70% !important; width:70% !important;" src="images/postmigration3.png">
 					</section>
 
 					<section>
-						migration SS database SS
+						<h3>Post Database </h3>
+						<img src="images/postdatabase3.png">
 					</section>
 
 					<section>
-						controller SS
+						<h3>Post Controller</h3>
+						<img style="height:90% !important; width:80% !important;" src="images/postcontroller3.png">
 					</section>
 
 					<section>
-						model ss view ss
+							<h3>Post Model</h3>
+							<img src="images/postmodel3.png">
+					</section>
+
+					<section>
+							<h3>Post View </h3>
+							<img src="images/postview3.png">
 					</section>
 
 					<section data-background="images/posts.gif">
 					</section>
 
 					<section>
-						<h3>To add an addition field to your table </h3>
+						<h3>To add an additional field to your table </h3>
 						<p class="fragment"><b>add_ColumnName_to_TableName</b></p><br>
 						<code class="fragment">rails generate migration add_author_to_posts author:string </code>
+						<code class="fragment">rake db:migrate</code>
 					</section>
 
 					<section>
-						screenshot of how that migration table would look like.
+							<h3>Author Migration</h3>
+							<img src="images/authormigration3.png">
 					</section>
 
 					<section>
+						<h3>Adding Validation</h3>
+						<p class="fragment"><b>Validation</b> is the process of ensuring that a program operates on clean, correct and useful data.
+							It uses routines, often called "validation rules" "validation constraints" or "check routines", that
+							check for correctness, meaningfulness, and security of data that are input to the system.
+						</p>
+						<p class="fragment"><b>app/model/post.rb</b></p>
+						<code class="fragment">validates :title, :presence => true</code>
+					</section>
+
+					<section>
+						<h3>Creating Associations</h3>
+						<p><b>Associations</b> is the way that two entities are functionally connected to each other.</p>
 						<ul style="list-style-type:none;">
 							<li class="none fragment"><code class="fragment">rails g model Comment author:string body:text post:references</code></li><br>
 							<li class="none fragment"><code class="fragment">rake db:migrate</code></li>
 						</ul>
+
+						<p class="fragment"><code>post:references</code> tells the Rails generator to add a <u>foreign key</u> to the Comments Database Table.</p>
 					</section>
 
 					<section>
@@ -292,6 +321,14 @@
 						</div>
 					</section>
 
+					<section>
+						<p class="fragment"><b>app/model/post.rb</b></p>
+						<p class="fragment">Type in <code><b>has_many :comments</b></code></p>
+						<hr class="fragment">
+						<p class="fragment"><b>app/model/comment.rb</b></p>
+						<p class="fragment">Should see <code><b>belongs_to :post</b></code></p>
+					</section>
+
 				</section>
 
 				<section>
@@ -300,8 +337,51 @@
 						<hr>
 					</section>
 					<section>
-						Chapter 4
+						<h3>R.E.S.T</h3>
+						<p><b>Representational State Transfer</b> is a software client architecture created in 2000 by Dr. </p>
 					</section>
+
+					<section>
+						<h3>Main Methods</h3>
+						<table>
+							<tr>
+								<td>Action Verb</td>
+								<td>Database Action</td>
+							</tr>
+							<tr>
+								<td>
+									GET
+								</td>
+								<td>
+									XXX
+								</td>
+							</tr>
+							<tr>
+								<td>
+									POST
+								</td>
+								<td>
+									XXXX
+								</td>
+							</tr>
+							<tr>
+								<td>
+									PATCH
+								</td>
+								<td>
+									XXX
+								</td>
+							</tr>
+							<tr>
+								<td>
+									DELETE
+								</td>
+								<td>
+									XXX
+								</td>
+							</tr>
+						</table>
+					</secton>
 				</section>
 
 				<section>

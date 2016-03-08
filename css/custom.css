@@ -20,3 +20,21 @@
 #twitter-handles{
   color: white;
 }
+
+#right {
+  float: right !important;
+
+  img {
+    height: 50%
+    width: 50%
+  }
+}
+
+#left {
+  float: left !important;
+
+  img {
+    height: 50%
+    width: 50%
+  }
+}
