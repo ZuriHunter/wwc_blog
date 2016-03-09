@@ -6,8 +6,8 @@
 
 		<title>ROR | Classic Blog </title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="A presentation on how to build a Ruby on Rails blog">
+		<meta name="author" content="Zuri Hunter">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -95,7 +95,7 @@
 					</section>
 
 					<section>
-					 GIF of the final Rails App
+						<img src="images/oldwwcblog.gif">
 					</section>
 				</section>
 
@@ -123,6 +123,7 @@
 					</section>
 
 					<section data-background="images/railshp.png">
+
 					</section>
 				</section>
 
@@ -184,7 +185,7 @@
 							<li class="fragment"><code><b>test/</b></code> - contains all of the subdirectories with automated tests for each part of your application.
 							</li><br>
 
-							<li class="fragment"><code><b>tmp/</b></code> - contains <b><i>ephemeral files</b></i>.  This is where you finde cached copies of your app's
+							<li class="fragment"><code><b>tmp/</b></code> - contains <b><i>ephemeral files</b></i>.  This is where you find cached copies of your app's
 								assets, process ids, user sessions and files representing sockets being used in the app.
 							</li><br>
 
@@ -244,7 +245,8 @@
 					</section>
 
 
-					<section data-background="images/posts.gif">
+					<section>
+						<img src="images/posts.gif">
 					</section>
 
 					<section>
@@ -860,7 +862,7 @@ end
 						<pre><code class="hljs" data-trim contenteditable>
 <p id="notice"><%= notice %></p>
 
- <h1>My Posts</h1>
+ <h1 class="center">My Posts</h1>
 
 
  <div class="mdl-grid">
@@ -888,6 +890,28 @@ end
 <% end %>
 
 						</code></pre>
+					</section>
+
+					<section>
+						<p>app/assets/stylesheets/application.css</p>
+						<pre><code class="hljs" data-trim contenteditable>
+
+.center {
+ text-align: center;
+}
+.demo-card-wide.mdl-card {
+ width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+ color: #fff;
+ height: 176px;
+ background: url('http://images2.fanpop.com/image/photos/13700000/The-beautiful-Yorkie-yorkshire-terriers-13725145-1600-1200.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+ color: #fff;
+}
+					</code></pre>
+
 					</section>
 				</section>
 
