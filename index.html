@@ -62,7 +62,7 @@
 						<small><a href="http://www.twitter.com/ZuriHunter" id="twitter-handles">Zuri Hunter</a></small> |
 						<small><a href="http://twitter.com/ErinUptonCos" id="twitter-handles">Erin Upton-Cosulich</a></small> |
 						<small><a href="http://twitter.com/MaryKMcKenzie" id="twitter-handles">Mary Katherine McKenzie</a></small> |
-						<small><a href="http://twitter.com/scarletalphabet" id="twitter-handles">Katherine McClintic</a></small>
+						<small><a href="http://twitter.com/ny8nine" id="twitter-handles">Nyasha Hamilton</a></small>
 					</p>
 				</section>
 
@@ -76,6 +76,15 @@
 						<li>Constructing the Controller</li>
 						<li>Designing the View </li>
 						<li>Feedback</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Cloud IDE</h1>
+					<ul>
+						<li><a  href="https://www.nitrous.io/">Nitrous</a></li>
+						<li><a href="https://c9.io/">Cloud 9</a></li>
+						<li><a href="https://codeanywhere.com/">Codeanywhere</a></li>
 					</ul>
 				</section>
 
@@ -210,6 +219,21 @@
 					</section>
 
 					<section>
+							<h3>Post Model</h3>
+							<img src="images/postmodel3.png">
+					</section>
+
+					<section>
+						<h3>Post Controller</h3>
+						<img style="height:90% !important; width:80% !important;" src="images/postcontroller3.png">
+					</section>
+
+					<section>
+							<h3>Post View </h3>
+							<img src="images/postview3.png">
+					</section>
+
+					<section>
 							<h3>Post Migration</h3>
 							<img style="height:70% !important; width:70% !important;" src="images/postmigration3.png">
 					</section>
@@ -219,20 +243,6 @@
 						<img src="images/postdatabase3.png">
 					</section>
 
-					<section>
-						<h3>Post Controller</h3>
-						<img style="height:90% !important; width:80% !important;" src="images/postcontroller3.png">
-					</section>
-
-					<section>
-							<h3>Post Model</h3>
-							<img src="images/postmodel3.png">
-					</section>
-
-					<section>
-							<h3>Post View </h3>
-							<img src="images/postview3.png">
-					</section>
 
 					<section data-background="images/posts.gif">
 					</section>
@@ -306,13 +316,13 @@
 									<th>post</th>
 								</tr>
 								<tr>
-									<td>2</td>
+									<td>1</td>
 									<td>Mary Katherine</td>
 									<td>Sweet!</td>
 									<td>1</td>
 								</tr>
 								<tr>
-									<td>1</td>
+									<td>2</td>
 									<td>Zuri</td>
 									<td>Nice!</td>
 									<td>2</td>
@@ -338,15 +348,22 @@
 					</section>
 					<section>
 						<h3>R.E.S.T</h3>
-						<p><b>Representational State Transfer</b> is a software client architecture created in 2000 by Dr. </p>
+						<p><b>Representational State Transfer</b> is a client-server software architecture introduced in 2000 by Dr. Roy Fielding, one of the authors of
+						HHTP specification.  The REST architecture deals with representation of resources.</p>
+						<ol>
+							<li class="fragment">Client <b>initiates</b> a request to the server</li>
+							<li class="fragment">Server <b>processes</b> that request</li>
+							<li class="fragment">Server <b>returns</b> a response to the Client</li>
+						</ol>
+
+						<p class="fragment">All of this is done in the Rails <b>controller</b></p>
 					</section>
 
 					<section>
-						<h3>Main Methods</h3>
 						<table>
 							<tr>
-								<td>Action Verb</td>
-								<td>Database Action</td>
+								<th>Action Verb</th>
+								<th>Database Action</th>
 							</tr>
 							<tr>
 								<td>
@@ -381,26 +398,320 @@
 								</td>
 							</tr>
 						</table>
-
-						<p>These are the four methods that follow the <b>C.R.U.D</b> functionality</p>
-					</secton>
+					</section>
 
 					<section>
 						<table>
-							<th>
-								<td>
+							<tr>
+								<th>
 									Action
-								</td>
-								<td>
+								</th>
+								<th>
 									Description
+								</th>
+								<th>
+									HTTP Verb
+								</th>
+							</tr>
+
+							<tr>
+								<td>
+									index
 								</td>
 								<td>
-									HTTP Verb
+									List all records
 								</td>
-							</th>
+								<td>
+									GET
+								</td>
+							</tr>
 
+							<tr>
+								<td>
+									show
+								</td>
+								<td>
+									Show one record
+								</td>
+								<td>
+									GET
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									new
+								</td>
+								<td>
+									Show form to create a record
+								</td>
+								<td>
+									GET
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									edit
+								</td>
+								<td>
+									Show form to edit a record
+								</td>
+								<td>
+									GET
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									create
+								</td>
+								<td>
+									Create a new record
+								</td>
+								<td>
+									POST
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									update
+								</td>
+								<td>
+									Update an existing record
+								</td>
+								<td>
+									PATCH
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									destroy
+								</td>
+								<td>
+									Delete a record
+								</td>
+								<td>
+									DELETE
+								</td>
+							</tr>
 						</table>
 					</section>
+
+					<section>
+						<h3>Routes</h3>
+						<p class="fragment"><b>Routes</b> help connect the URLS to the code that comprises our application.</p>
+						<p class="fragment"><b>config/routes.rb</b></p>
+						<p class="fragment">Erase all of the lines that have # at the start</p>
+						<pre class="fragment"><code class="ruby" data-trim contenteditable>
+Rails.application.routes.draw do
+	resources :posts
+end
+						</code></pre>
+						<code class="fragment">rake routes</code>
+
+					</section>
+
+					<section>
+						<h3>Nested Routes</h3>
+						<p><b>Nested Resource</b> is when one resource belongs to another resource.</p>
+						<pre class="fragment"><code class="ruby" data-trim contenteditable>
+Rails.application.routes.draw do
+  resources :posts do
+	 resources :comments
+	end
+end
+						</code></pre>
+
+						<code class="fragment">resources :comments, only: :create</code>
+						<p class="fragment">Restricts the user to only <b>create</b> a comment</p>
+
+					</section>
+
+					<section>
+						<h3>Root Route</h3>
+						<code class="fragment">root 'posts#index'</code>
+					</section>
+
+					<section>
+						<p><b>app/controller/posts_controller.rb</b></p>
+						<pre class="fragment"><code class="ruby" data-trim contenteditable>
+#INDEX
+def index
+  @posts = Post.all
+end
+						</code></pre>
+
+						<p class="fragment">'@posts' is an instance and it calls the variable along with a method, showing all the posts within the variable.</p>
+					</section>
+
+					<section>
+						<pre class="fragment"><code class="ruby" data-trim contenteditable>
+#SHOW
+def show
+end
+						</code></pre>
+
+						<p class="fragment">This method relies on the <b>before_action class</b> method</p>
+						<pre class="fragment"><code class="ruby" data-trim contenteditable>
+before_action :set_post, only: [:show, :edit, :update, :destroy]
+						</code></pre>
+						<p class="fragment">Don't Repeat Yourself!! Look at the private method <code>set_post</code></p>
+						<pre class="fragment"><code class="ruby" data-trim contenteditable>
+private
+def set_post
+  @post = Post.find(params[:id])
+end
+						</code></pre>
+					</section>
+
+					<section>
+						<pre><code class="ruby" data-trim contenteditable>
+def new
+ @post = Post.new
+end
+						</code></pre>
+						<p>This method renders a new form for a post</p>
+					</section>
+
+					<section>
+						<pre class=""><code class="ruby" data-trim contenteditable>
+#EDIT
+def edit
+end
+						</code></pre>
+
+						<p class="">This method relies on the <b>before_action class</b> method</p>
+						<pre class=""><code class="ruby" data-trim contenteditable>
+before_action :set_post, only: [:show, :edit, :update, :destroy]
+						</code></pre>
+						<pre class=""><code class="ruby" data-trim contenteditable>
+private
+def set_post
+	@post = Post.find(params[:id])
+end
+						</code></pre>
+					</section>
+
+					<section>
+						<pre class=""><code class="ruby" data-trim contenteditable>
+def create
+ @post = Post.new(post_params)
+
+ respond_to do |format|
+  if @post.save
+   format.html { redirect_to @post, notice: 'Post was successfully created.' }
+   format.json { render :show, status: :created, location: @post }
+    else
+   format.html { render :new }
+   format.json { render json: @post.errors, status: :unprocessable_entity }
+  end
+ end
+end
+				</code></pre>
+
+				<ol>
+					<li class="fragment">Only allows for the post to be saved using "Strong Parameters."</li>
+					<li class="fragment">If the post "save" returns showing the post with a notification.</li>
+					<li class="fragment">If the post did not "save" and returns false brings you to the new view listing the errors. </li>
+				</ol>
+					</section>
+
+					<section>
+							<pre class=""><code class="ruby" data-trim contenteditable>
+def update
+ respond_to do |format|
+  if @post.update(post_params)
+   format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+	 format.json { render :show, status: :ok, location: @post }
+    else
+   format.html { render :edit }
+   format.json { render json: @post.errors, status: :unprocessable_entity }
+  end
+ end
+end
+							</code></pre>
+						<p>Same case with "edit" except its replaced with "update."</p>
+
+					</section>
+
+					<section>
+						<pre class=""><code class="ruby" data-trim contenteditable>
+def destroy
+ @post.destroy
+  respond_to do |format|
+   format.html { redirect_to posts_url }
+   format.json { head :no_content }
+  end
+end
+						</code></pre>
+						<p>Simpler method than the others, once done it redirects you to the index page of the Posts</p>
+					</section>
+
+					<section>
+						<h3>Where is the <code>Comments</code> controller?</h3>
+					</section>
+
+					<section>
+						<code>rails generate controller comments</code>
+						<code>rake db:migrate</code>
+						<ol>
+							<li class="fragment">Creates an empty "controller" </li>
+							<li class="fragment">Creates an empty "views" directory</li>
+							<li class="fragment">Creates helpers, tests, and assets</li>
+						</ol>
+					</section>
+
+					<section>
+						<p>app/controller/comments</p>
+						<pre class=""><code class="ruby" data-trim contenteditable>
+def create
+ @post = Post.find(params[:post_id])
+  if @post.comments.create(comment_params)
+   redirect_to @post,
+    notice: 'Comment was successfully created.'
+  else
+   redirect_to @post,
+  end
+ end
+end
+					</code></pre>
+
+					<ol>
+						<li>Finds the correct post_id using the params hash</li>
+						<li>Redirects to the post</li>
+						<li>Show flash message if success or fail</li>
+					</ol>
+					</section>
+
+					<section>
+
+						<h3>Parameters</h3>
+						<p><b>Parameters</b> generally represent part of the URL used to request a page or values from a form,
+							 and they’re accessible in the controller as a hash named params.</p>
+					</section>
+
+					<section>
+							<pre class=""><code class="ruby" data-trim contenteditable>
+private
+
+ def comment_params
+  params.require(:comment).permit(:author, :body)
+ end
+end
+							</code></pre>
+							<p>This method first requires the params hash to contain
+								 a nested hash with the key :post. It then returns only the permitted values
+								 (:title and :body) from this nested hash.
+							</p>
+							<code class="fragment">{"title" => "First Post", "body" => ""}</code>
+
+					</section>
+
+
+
 				</section>
 
 				<section>
@@ -408,8 +719,176 @@
 						<h1>Designing the <span id="head">View</span></h1>
 						<hr>
 					</section>
+
 					<section>
-						Chapter 5
+						<p><b>Gemfile</b></p>
+						<p><code class="fragment">gem 'material_design_lite-rails'</code></p>
+						<p><code class="fragment">bundle install</code></p>
+						<p class="fragment">app/assets/javascript/application.js</p>
+						<p class="fragment"><code>//= require material</code></p>
+
+					</section>
+
+					<section>
+						<p class="fragment">app/assets/stylesheet/application.css</p>
+						<p class="fragment"><code>*= require material</code></p>
+						<p class="fragment">app/views/layouts/application.html.erb</p>
+						<p class="fragment"><code><%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %></code></p>
+						<p class="fragment">Place in between the 'head'</p>
+					</section>
+
+					<section>
+						<pre><code class="hljs" data-trim contenteditable>
+<!DOCTYPE html>
+ <html>
+  <head>
+  <title>ROR | The Classic Blog</title>
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
+   <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+   <%= yield %>
+
+  </body>
+</html>
+						</pre></code>
+
+						<pre class="fragment"><code>
+<main class="mdl-layout__content">
+<div class="page-content">
+	<%= yield %>
+ </div>
+</main>
+<!-- </div>  Uncomment this as well-->
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Partials</h3>
+						<p><b>Partials</b> are partial templates that are mainly used in a general manner.</p>
+						<code class="fragment"><%= render 'nameOfPartial' %></code>
+						<p>To save a partial '_nameOfPartial.html.erb'</p>
+
+					</section>
+
+					<section>
+						<h3>Create Navbar Partial</h3>
+						<p class="fragment">Create a folder name 'partials'</p>
+						<p class="fragment">Create a file name '_navbar.html.erb'</p>
+						<p class="fragment">app/views/layouts/application.html.erb</p>
+						<p class="fragment"><code><%= render 'partials/navbar'%> </code></p>
+					</section>
+
+					<section>
+						<p>app/views/partials/_navbar.html.erb</p>
+						<pre><code class="hljs" data-trim contenteditable>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+ <header class="mdl-layout__header">
+	<div class="mdl-layout__header-row">
+	 <div class="mdl-layout-spacer"></div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+									mdl-textfield--floating-label mdl-textfield--align-right">
+		 <label class="mdl-button mdl-js-button mdl-button--icon"
+							 for="fixed-header-drawer-exp">
+			<i class="material-icons">search</i>
+		 </label>
+		 <div class="mdl-textfield__expandable-holder">
+			<input class="mdl-textfield__input" type="text" name="sample"
+								 id="fixed-header-drawer-exp">
+		 </div>
+		</div>
+	</div>
+ </header>
+	<div class="mdl-layout__drawer">
+		<span class="mdl-layout-title">Title</span>
+		<nav class="mdl-navigation">
+			<a class="mdl-navigation__link" href="">Link</a>
+			<a class="mdl-navigation__link" href="">Link</a>
+			<a class="mdl-navigation__link" href="">Link</a>
+			<a class="mdl-navigation__link" href="">Link</a>
+		</nav>
+	</div>
+
+					</code></pre>
+
+					<p>Open Command Prompt (PC) or Terminal (Mac)</p>
+					<p><code>rails server</code></p>
+
+					</section>
+
+
+					<section>
+						<p><b>Open app/views/posts/index.html.erb</b></p>
+						<pre class=""><code class="hljs" data-trim contenteditable>
+<p id="notice"><%= notice %></p>
+
+ <h1>Listing Posts</h1>
+
+	<table>
+	 <thead>
+		<tr>
+		 <th>Title</th>
+		 <th>Body</th>
+		 <th colspan="3"></th>
+		</tr>
+	 </thead>
+
+	 <tbody>
+		<% @posts.each do |post| %>
+		 <tr>
+			<td><%= post.title %></td>
+			<td><%= post.body %></td>
+			<td><%= link_to 'Show', post %></td>
+			<td><%= link_to 'Edit', edit_post_path(post) %></td>
+			<td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		 </tr>
+		<% end %>
+	 </tbody>
+	</table>
+
+	<br>
+
+<%= link_to 'New Post', new_post_path %>
+
+						</code></pre>
+						<p>And replace with ....</p>
+					</section>
+
+					<section>
+						<pre><code class="hljs" data-trim contenteditable>
+<p id="notice"><%= notice %></p>
+
+ <h1>My Posts</h1>
+
+
+ <div class="mdl-grid">
+  <% @posts.each do |post| %>
+   <div class="mdl-cell mdl-cell--4-col">
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+     <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text"><%= post.title %></h2>
+     </div>
+     <div class="mdl-card__supporting-text">
+      <%= post.body %>
+     </div>
+		 <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+       <%= link_to 'Show', post %> | <%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</a>
+		 </div>
+    </div>
+	 </div>
+  <% end %>
+ </div>
+
+<%= link_to new_post_path, class: "mdl-button mdl-js-button mdl-button--fab mdl-button--colored" do %>
+ <i class="material-icons">add</i>
+<% end %>
+
+						</code></pre>
 					</section>
 				</section>
 
