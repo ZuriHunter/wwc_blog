@@ -32,6 +32,8 @@
 
 #left {
   float: left !important;
+  height: 300px;
+  width: 300px; 
 
   img {
     height: 50%
