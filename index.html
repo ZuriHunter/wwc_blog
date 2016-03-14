@@ -279,7 +279,7 @@
 						<p class="fragment"><code>post:references</code> tells the Rails generator to add a <u>foreign key</u> to the Comments Database Table.</p>
 					</section>
 
-					<section>
+					<!-- <section>
 						<div class="right">
 							<h3>Post</h3>
 							<hr>
@@ -330,7 +330,7 @@
 								</tr>
 							</table>
 						</div>
-					</section>
+					</section> -->
 
 					<section>
 						<p class="fragment"><b>app/model/post.rb</b></p>
@@ -516,6 +516,11 @@ end
 					</section>
 
 					<section>
+						<h3>Root Route</h3>
+						<code class="fragment">root 'posts#index'</code>
+					</section>
+
+					<section>
 						<h3>Nested Routes</h3>
 						<p><b>Nested Resource</b> is when one resource belongs to another resource.</p>
 						<pre class="fragment"><code class="ruby" data-trim contenteditable>
@@ -531,10 +536,6 @@ end
 
 					</section>
 
-					<section>
-						<h3>Root Route</h3>
-						<code class="fragment">root 'posts#index'</code>
-					</section>
 
 					<section>
 						<p><b>app/controller/posts_controller.rb</b></p>
